@@ -1,0 +1,21 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ListItemPrimary">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="ListItemSecondary">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+</resources>

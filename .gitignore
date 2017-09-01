@@ -1,0 +1,17 @@
+*.swp
+*.iml
+*.apk
+*.dex
+.gradle
+.idea
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+Thumbs.db
+/*/build/
+build/
+gradle/
+/captures
+.externalNativeBuild
+keystore.properties

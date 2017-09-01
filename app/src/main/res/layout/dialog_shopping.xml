@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="@dimen/dialog_padding"
+    android:minWidth="@dimen/dialog_min_width"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="@string/buy_devices"
+        android:textAppearance="@android:style/TextAppearance.Material.DialogWindowTitle"
+        android:layout_marginBottom="@dimen/dialog_item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/dialog_item_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textAppearance="@style/ListItemPrimary"
+            android:text="@string/phynode_epaper_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textAppearance="@style/ListItemSecondary"
+            android:autoLink="web"
+            android:text="http://www.phytec.de/produkt/internet-of-things/phynoder-epaper-1/"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textAppearance="@style/ListItemPrimary"
+            android:text="@string/phynode_kw41z"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textAppearance="@style/ListItemSecondary"
+            android:autoLink="web"
+            android:text="Coming soon!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

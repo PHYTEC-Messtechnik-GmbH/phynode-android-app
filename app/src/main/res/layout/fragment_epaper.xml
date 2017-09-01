@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:clipToPadding="false"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image_preview"
+                    android:layout_height="150dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="4dp" />
+
+                <ImageButton
+                    android:visibility="gone"
+                    style="@style/Base.Widget.AppCompat.ActionButton"
+                    android:id="@+id/button_epaper_more"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_more_vert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="?android:colorBackground"
+                android:elevation="4dp"
+                android:id="@+id/layout_form"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="@dimen/list_item_padding_start_end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/list_item_icon_width"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_school" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:hint="@string/title"
+                        android:id="@+id/edit_title"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/edit_name" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/list_item_icon_width"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/ic_person" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:hint="@string/name"
+                        android:id="@+id/edit_name"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/edit_department" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/list_item_icon_width"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/ic_group" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:hint="@string/department"
+                        android:id="@+id/edit_department"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:maxLines="1" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/list_item_icon_width"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/ic_photo" />
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/button_logo"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:minHeight="56dp"
+                        android:minWidth="120dp"
+                        android:maxHeight="128dp"
+                        android:maxWidth="300dp"
+                        android:src="@drawable/ic_photo" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="?android:buttonBarStyle"
+        android:background="?android:colorBackground"
+        android:clipToPadding="false"
+        android:elevation="6dp"
+        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_status"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/disconnected" />
+
+            <ProgressBar
+                style="?android:progressBarStyleHorizontal"
+                android:id="@+id/progress_send"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </LinearLayout>
+
+        <Button
+            style="?android:buttonBarButtonStyle"
+            android:id="@+id/button_send"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:minWidth="120dp"
+            android:text="@string/send" />
+
+    </LinearLayout>
+
+</LinearLayout>

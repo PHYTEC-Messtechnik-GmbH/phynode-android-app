@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_item_icon_width">56dp</dimen>
+    <dimen name="list_item_min_height">72dp</dimen>
+    <dimen name="list_item_padding_start_end">16dp</dimen>
+    <dimen name="list_padding_top_bottom">8dp</dimen>
+    <dimen name="dialog_min_width">280dp</dimen>
+    <dimen name="dialog_padding">24dp</dimen>
+    <dimen name="dialog_item_margin">20dp</dimen>
+    <dimen name="dialog_button_bar_padding">8dp</dimen>
+</resources>
