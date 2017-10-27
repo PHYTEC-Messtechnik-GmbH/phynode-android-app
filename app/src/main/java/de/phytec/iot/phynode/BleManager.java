@@ -144,8 +144,9 @@ public class BleManager {
     }
 
     public ArrayList<String> getScanFilters() {
-        if (mScanFilters.isEmpty())
+        if (mScanFilters.isEmpty()) {
             return null;
+        }
 
         ArrayList<String> scanFilters = new ArrayList<>();
 
@@ -176,8 +177,9 @@ public class BleManager {
     }
 
     public void stopScan() {
-        if(!mIsScanning)
+        if(!mIsScanning) {
             return;
+        }
 
         mBluetoothLeScanner = mBluetoothAdapter.getBluetoothLeScanner();
         mBluetoothLeScanner.stopScan(mScanCallback);
@@ -354,10 +356,20 @@ public class BleManager {
             PhytecLog.i(TAG, "EpaperCallback::onBufferWriteNext() "
                     + String.valueOf(mBufferData.size()));
 
-            writeCharacteristic(BleUuid.Epaper.SERVICE,
-                    BleUuid.Epaper.DATA_BUFFER,
-                    mBufferData.get(mBufferData.size() - 1),
-                    BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
+            // On the phyNODE-KW41Z writing too often without waiting for a response results in a
+            // squashed looking image on the e-paper display because data is written too fast. Thus
+            // we write WITH waiting for a response every so often.
+            if (mBufferData.size() % 10 != 0) {
+                writeCharacteristic(BleUuid.Epaper.SERVICE,
+                        BleUuid.Epaper.DATA_BUFFER,
+                        mBufferData.get(mBufferData.size() - 1),
+                        BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
+            } else {
+                writeCharacteristic(BleUuid.Epaper.SERVICE,
+                        BleUuid.Epaper.DATA_BUFFER,
+                        mBufferData.get(mBufferData.size() - 1),
+                        BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);
+            }
 
             if (mBufferData.size() > 0)
                 mBufferData.remove(mBufferData.size() - 1);

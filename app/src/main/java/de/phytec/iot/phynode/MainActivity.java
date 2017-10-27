@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -97,7 +98,10 @@ public class MainActivity extends AppCompatActivity implements BleCallbacks {
         }
 
         mBleManager = new BleManager(this, this);
-        mBleManager.setScanFilters(new ArrayList<>(Collections.singletonList("phyNODE-ePaper")));
+        String[] arrayFilters = getResources().getStringArray(R.array.device_name_filters);
+        ArrayList<String> listFilters = new ArrayList<>();
+        Collections.addAll(listFilters, arrayFilters);
+        mBleManager.setScanFilters(listFilters);
         mDeviceListAdapter = new DeviceListAdapter(this, R.layout.list_item_device, mDeviceList);
 
         // prompt for permission (location service)
@@ -279,6 +283,8 @@ public class MainActivity extends AppCompatActivity implements BleCallbacks {
         final Intent intent = new Intent(this, PeripheralActivity.class);
         intent.putExtra(PeripheralActivity.EXTRA_DEVICE_ADDRESS,
                 mDeviceList.getAddressList().get(position));
+        intent.putExtra(PeripheralActivity.EXTRA_DEVICE_NAME,
+                mDeviceList.getNameList().get(position));
         startActivity(intent);
     }
 
@@ -319,6 +325,7 @@ public class MainActivity extends AppCompatActivity implements BleCallbacks {
     @Override
     public void scanStarted() {
         mButtonScan.setText(R.string.scan_stop);
+        mDeviceList.removeAllNonFavourites();
 
         // if mDeviceList has at least one favourite then display it immediately, otherwise show the
         // placeholder and hide mListView

@@ -41,14 +41,12 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -82,7 +80,7 @@ public class FragmentEpaper extends Fragment implements BleCallbacks/*, PopupMen
     private TextView mTextStatus;
     private Button mButtonSend;
 
-    private int p = 0;
+    private int mProgressCounter = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -278,7 +276,6 @@ public class FragmentEpaper extends Fragment implements BleCallbacks/*, PopupMen
             dataEightBpp.add(Arrays.copyOfRange(array, i, i + 128));
 
         // create new ArrayList<byte[]> but now with 1 bpp
-        int n = 0;
         for (byte[] bytes : dataEightBpp) {
             // java does not know about unsigned bytes and uses signed bytes instead, so -1 is
             // equivalent to 255
@@ -391,23 +388,23 @@ public class FragmentEpaper extends Fragment implements BleCallbacks/*, PopupMen
                         mProgressSend.setProgress(10);
                         break;
                     case WROTE_INIT:
-                        p = 0;
+                        mProgressCounter = 0;
                         mTextStatus.setText(R.string.epaper_init);
                         mProgressSend.setProgress(20);
                         break;
                     case WROTE_BUFFER_COLUMN:
                         mTextStatus.setText(R.string.epaper_buffer);
-                        // increment every 5th time
-                        if (p++ % 5 == 0)
+                        if (mProgressCounter++ % 4 == 0) {
                             mProgressSend.setProgress(mProgressSend.getProgress() + 1);
+                        }
                         break;
                     case WROTE_BUFFER:
                         mTextStatus.setText(R.string.epaper_buffer);
-                        mProgressSend.setProgress(70);
+                        mProgressSend.setProgress(90);
                         break;
                     case WROTE_UPDATE:
                         mTextStatus.setText(R.string.epaper_update);
-                        mProgressSend.setProgress(90);
+                        mProgressSend.setProgress(100);
                         break;
                     case NONE:
                     default:

@@ -62,7 +62,7 @@ class PeripheralPagerAdapter extends FragmentPagerAdapter {
 public class PeripheralActivity extends AppCompatActivity {
 
     public final static String EXTRA_DEVICE_ADDRESS = "DEVICE_ADDRESS";
-    //public final static String EXTRA_DEVICE_NAME = "DEVICE_NAME";
+    public final static String EXTRA_DEVICE_NAME = "DEVICE_NAME";
     //public final static String EXTRA_DEVICE_RSSI = "DEVICE_RSSI";
 
     private PeripheralPagerAdapter mPagerAdapter;
@@ -77,6 +77,8 @@ public class PeripheralActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_peripheral);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getIntent().getStringExtra(EXTRA_DEVICE_ADDRESS));
+        toolbar.setSubtitle(getIntent().getStringExtra(EXTRA_DEVICE_NAME));
 
         mPagerAdapter = new PeripheralPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.viewpager_peripheral);
@@ -85,8 +87,6 @@ public class PeripheralActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout_peripheral);
         tabLayout.setupWithViewPager(mViewPager);
-
-        setTitle(getIntent().getStringExtra(EXTRA_DEVICE_ADDRESS));
     }
 
     @Override

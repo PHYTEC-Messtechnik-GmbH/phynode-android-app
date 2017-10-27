@@ -11,7 +11,7 @@
     <string name="department">Department</string>
     <string name="disconnect">Disconnect</string>
     <string name="disconnected">Disconnected</string>
-    <string name="epaper_buffer">Wrote data to ePaper</string>
+    <string name="epaper_buffer">Writing data to ePaper&#8230;</string>
     <string name="epaper_init">Initiated ePaper</string>
     <string name="epaper_update">Updated ePaper</string>
     <string name="license">License</string>
@@ -45,4 +45,8 @@
     <string name="issue_report">Report an Issue</string>
     <string name="issue_report_github">Having an issue or found a bug with this app? Report it on Github!</string>
     <string name="issue_report_link">https://github.com/PHYTEC-Messtechnik-GmbH/phynode-android-app/issues</string>
+    <string-array name="device_name_filters">
+        <item>phyNODE-ePaper</item>
+        <item>phyNODE-KW41Z</item>
+    </string-array>
 </resources>

@@ -30,7 +30,7 @@
             android:textAppearance="@style/ListItemSecondary"
             android:autoLink="web"
             android:text="http://www.phytec.de/produkt/internet-of-things/phynoder-epaper-1/"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -47,8 +47,8 @@
         <TextView
             android:textAppearance="@style/ListItemSecondary"
             android:autoLink="web"
-            android:text="Coming soon!"
-            android:layout_width="match_parent"
+            android:text="http://www.phytec.de/produkt/internet-of-things/phynode-epaper-2/"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
