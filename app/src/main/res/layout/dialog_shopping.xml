@@ -41,7 +41,7 @@
 
         <TextView
             android:textAppearance="@style/ListItemPrimary"
-            android:text="@string/phynode_kw41z"
+            android:text="@string/phynode_athena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView

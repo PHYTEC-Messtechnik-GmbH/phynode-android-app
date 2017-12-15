@@ -23,7 +23,7 @@
     <string name="name">Name</string>
     <string name="no_devices_found">No Devices found yet</string>
     <string name="phynode_epaper_1">phyNODE-ePaper 1</string>
-    <string name="phynode_kw41z">phyNODE-KW41Z</string>
+    <string name="phynode_athena">phyNODE-Athena</string>
     <string name="preference_file_key">de.phytec.iot.phynode.PREFERENCE_FILE_KEY</string>
     <string name="save_as_file">Save as file</string>
     <string name="saved_department">department</string>
@@ -48,5 +48,6 @@
     <string-array name="device_name_filters">
         <item>phyNODE-ePaper</item>
         <item>phyNODE-KW41Z</item>
+        <item>phyNODE-Athena</item>
     </string-array>
 </resources>

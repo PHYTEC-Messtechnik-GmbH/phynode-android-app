@@ -18,7 +18,7 @@ Energy communication with phyNODE devices.
 -   Bluetooth Low Energy compatible smartphone or tablet
 -   compatible phyNODE device
     -   phyNODE-ePaper-1
-    -   phyNODE-KW41Z (coming soon)
+    -   phyNODE-Athena
 
 ## Playstore
 If you are not interested in building the phyNODE app yourself it is

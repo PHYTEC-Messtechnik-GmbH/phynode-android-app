@@ -356,7 +356,7 @@ public class BleManager {
             PhytecLog.i(TAG, "EpaperCallback::onBufferWriteNext() "
                     + String.valueOf(mBufferData.size()));
 
-            // On the phyNODE-KW41Z writing too often without waiting for a response results in a
+            // On the phyNODE-Athena writing too often without waiting for a response results in a
             // squashed looking image on the e-paper display because data is written too fast. Thus
             // we write WITH waiting for a response every so often.
             if (mBufferData.size() % 10 != 0) {

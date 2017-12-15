@@ -39,7 +39,7 @@ public class AboutActivity extends AppCompatActivity {
         mList = new AboutList();
         mList.add(R.drawable.ic_info_outline,
                 getString(R.string.app_version),
-                BuildConfig.VERSION_NAME);
+                BuildConfig.VERSION_NAME + (BuildConfig.DEBUG ? "-debug" : ""));
         mList.add(R.drawable.ic_gavel,
                 getString(R.string.license),
                 getString(R.string.license_name));
@@ -51,7 +51,7 @@ public class AboutActivity extends AppCompatActivity {
                 getString(R.string.issue_report_github));
         mList.add(R.drawable.ic_shopping_cart,
                 getString(R.string.buy_devices),
-                getString(R.string.phynode_epaper_1).concat(", ").concat(getString(R.string.phynode_kw41z)));
+                getString(R.string.phynode_epaper_1).concat(", ").concat(getString(R.string.phynode_athena)));
 
         mAdapter = new AboutListAdapter(this, R.layout.list_item_about, mList);
 
